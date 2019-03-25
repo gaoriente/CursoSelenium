@@ -133,6 +133,7 @@ public class TesteCampoTreinamento {
 	}
 	
 	@Test
+	@org.junit.Ignore //ELE DIZ PARA O JUNIT NAO EXECUTAR O TESTE
 	public void deveInteragisComLinks() {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().setSize(new Dimension(1200, 765));
@@ -142,6 +143,19 @@ public class TesteCampoTreinamento {
 		WebElement link = driver.findElement(By.linkText("Voltar"));
 		link.click();
 		
-		Assert.assertEquals("Voltou", link);
+//		Assert.fail(); quando quer que de falha para anotação
+	}
+	
+	@Test
+	public void buscaTextoNaPagina() {
+		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().setSize(new Dimension(1200, 765));
+		driver.get("file:///" + 
+				System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+		
+		WebElement link = driver.findElement(By.linkText("Voltar"));
+		link.click();
+		
+//		Assert.fail(); quando quer que de falha para anotação
 	}
 }
