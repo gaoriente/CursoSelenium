@@ -144,6 +144,8 @@ public class TesteCampoTreinamento {
 		link.click();
 		
 //		Assert.fail(); quando quer que de falha para anotação
+		Assert.assertEquals("Voltou!", driver.findElement(By.id("resultado")).getText());
+		driver.quit();
 	}
 	
 	@Test
@@ -153,9 +155,10 @@ public class TesteCampoTreinamento {
 		driver.get("file:///" + 
 				System.getProperty("user.dir") + "/src/main/resources/componentes.html");
 		
-		WebElement link = driver.findElement(By.linkText("Voltar"));
-		link.click();
+//		Assert.assertTrue(driver.findElement(By.tagName("body")).getText().contains("Campo de Treinamento"));
+		Assert.assertEquals("Campo de Treinamento", driver.findElement(By.tagName("h3")).getText());
 		
-//		Assert.fail(); quando quer que de falha para anotação
+		Assert.assertEquals("Cuidado onde clica, muitas armadilhas...", driver.findElement(By.className("facilAchar")).getText());
+		driver.quit();
 	}
 }
