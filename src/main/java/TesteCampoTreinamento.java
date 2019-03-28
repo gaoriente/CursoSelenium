@@ -31,7 +31,7 @@ public class TesteCampoTreinamento {
 		Assert.assertEquals("teste", 
 				driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
 		
-		driver.quit();
+		//driver.quit();
 	}
 	
 	@Test
